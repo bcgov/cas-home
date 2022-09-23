@@ -16,6 +16,7 @@ Home for the Climate Action Secretariat Digital Services Team
  - https://github.com/bcgov/cas-postgres-style-tests: A collection of automated tests to ensure good sql coding practices and consistent formatting within a Postgres database.
  - https://github.com/bcgov/cas-template-app: A skeleton app that uses the Climate Action Secretariat tech stack. Currently only used for SSO packages contained in the repo.
  - https://github.com/bcgov/cas-shelf: A set of Terraform Enterprise API scripts that help to create a new workspace with an initial configuration
+ - https://github.com/bcgov/cas-onboarding: A todo app tutorial using our tech stack
  
 ### Deprecated repos
  - https://github.com/bcgov/cas-postgres: A helm chart for spilo, Zalando's patroni appliance. This should be replaced by usage of the the Postgres Operator from CrunchyData. 
@@ -29,10 +30,12 @@ Home for the Climate Action Secretariat Digital Services Team
  - https://github.com/bcgov/cas-docker-sqitch: Temporary workaround repo to make sqitch available on CircleCI. Only contains a sqitch dockerfile.
  - https://github.com/bcgov/cas-ggircs-metabase-build: Build configs for assembling a metabase image using s21 (source-to-image). Consumes the output of cas-ggircs-metabase-builder.
  - https://github.com/bcgov/cas-ggircs-metabase-builder: Build configs for building a metabase image including dependencies. Feeds cas-ggircs-metabase-build.
+ - https://github.com/bcgov/spilo-chart: A short-lived attempt to make a reusable chart for Spilo. The CrunchyDB Postgres Operator became available shortly after
 
 
 ## Team Agreements
 
 ## Tech Stack and Tools
 
+## BC Gov Resources
 
