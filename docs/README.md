@@ -1,8 +1,31 @@
 # Stack Documentation and Style Guide
 
-This document defines the interactions between the elements of the stack, the tools we use and the various style conventions used across the code base.
+This document defines the interactions between the elements of the stack used by the CAS digital services team, the tools we use and the various style conventions used across the code base.
+The choices documented here are defaults, meanining that they may be overriden in individual projects as needed.
 
 ## Stack Overview
+
+- Local development tools
+  - asdf
+  - pre-commit
+- Backend
+  - [PostgreSQL](Readme.md#PostgreSQL)
+  - [Sqitch (schema migration tool)]
+  - [API generation with PostGraphile]
+- Frontend
+  - React
+  - Relay
+  - React JSONSchema Form
+- Testing
+  - [Unit testing with pgTap]
+- CI/CD
+  - GitHub actions
+  - Helm
+  - Continuous deployment
+- Version Control
+  - Commit signing
+  - Branching and merging model
+  - Peer review process
 
 ### PostgreSQL
 
