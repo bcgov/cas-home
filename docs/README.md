@@ -10,7 +10,7 @@ The choices documented here are defaults, meanining that they may be overriden i
   - pre-commit
 - Backend
   - [PostgreSQL](Readme.md#PostgreSQL)
-  - [Sqitch (schema migration tool)]
+  - [Sqitch (schema migration tool)](./backend/sqitch.md)
   - [API generation with PostGraphile]
 - Frontend
   - React
@@ -30,53 +30,13 @@ The choices documented here are defaults, meanining that they may be overriden i
 ### PostgreSQL
 
 PostgreSQL is our database of choice. It is:
+
 - extensible (e.g. XML support, PostGIS extension)
 - supports unit testing (with [pgTap](https://pgtap.org/)
 - scalable across multiple nodes with Citus
 - highly available with Patroni
 - allowing access to other databases using foreign data wrappers
 - allowing functions written in various programming languages
-
-### Database change management
-
-We reviewed several tools which would allow us to handle database migrations. The following features were considered required for the tool:
-
-- The tool should support migration scripts should written in SQL and PL/PGSQL
-- The tool should allow us to define releases following semantic versioning
-- The tool should be able to handle failing migrations, and deploy migrations in a transaction
-
-The two tools we analyzed in depth are sqitch ([https://sqitch.org/](https://sqitch.org/)) and Flyway ([https://flywaydb.org/](https://flywaydb.org/)).
-
-#### Migrations and releases
-
-In database change management tools, a migration is a set of SQL commands creating, deleting or altering a set of database object. In both sqitch and flyway, migrations can be stored in SQL files. Additionally, flyway supports writing migrations in Java files, for more complex processes.
-
-The mechanism used to define the migrations order is different for both tools.
-
-- Sqitch uses a &quot;plan&quot; file, listing the migrations names in the order in which they should be deployed, and their dependencies. The sqitch tag command allows to cut releases
-- Flyway uses version numbers, stored in the file name, e.g. _V1.44.23.76\_\_migration_description.sql_ for &quot;versioned migrations&quot; and supports &quot;repeatable migrations&quot; (filename starting with &quot;R\_\_&quot;), which are executed after all the versioned migrations are deployed, in order of their descriptions (e.g. _R\_\_0001_viewA.sql_, then _R\_\_0002_viewB.sql_)
-
-#### Reverting migrations
-
-In development and test environments, reverting migrations is required to start from a clean database. In production, this can be needed to undo a &quot;bad&quot; release.
-
-- For both use cases, sqitch requires the developer to write a &quot;revert&quot; migration for each &quot;deploy&quot; migration they write (a sqitch &quot;change&quot; has as _deploy_, a _revert_, and a _verify_ file)
-- For dev/test environments, Flyway has a &quot;clean&quot; command that deletes all the objects in the schemas managed by Flyway. For production reverts, the &quot;pro&quot; version of Flyway supports &quot;undo&quot; migrations, but this could be accomplished by deploying another release with migrations that undo the changes.
-
-#### Handling Errors in Migrations
-
-Errors occurring during the migrations are common in dev and test environments, due to bugs in the migration files. They can also occur in production if, for instance, there are issues connecting to the database.
-
-Flyway handles errors by wrapping each migration in a transaction. Optionally, the entire set of migrations being deployed can be wrapped in a single transaction by setting the _group_ property to _true_.
-
-Sqitch makes use of the verify scripts to ensure that a migration is deployed. If a migration fails, it will revert the previous migrations that were deployed in the current run, using the revert script. Sqitch does not wrap migrations in transactions, requiring the developer to add begin and commit/rollback statements to each script. Additionally, sqitch does not support wrapping the entire set of migrations in a single transaction. Furthermore, it does not reuse the connection to the database, making it very sensitive to DNS issues. Such issues have even led to the database and the sqitch changelog to be in inconsistent state, requiring manual fixes, because executing a migration and adding it to the database changelog is not done in a transaction.
-
-#### Other tools
-
-Other tools such as alembic ([https://alembic.sqlalchemy.org/](https://alembic.sqlalchemy.org/)) and liquibase ([https://www.liquibase.org/](https://www.liquibase.org/)) were reviewed but were not selected as
-
-- Alembic does not use plain SQL files for migrations (uses python files)
-- Liquibase has a very verbose format for the changelog, plain SQL files are supported but are not the default, and documentation is lacking.
 
 ### Express + PostGraphile
 
