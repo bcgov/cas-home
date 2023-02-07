@@ -3,10 +3,10 @@
 ## Deployment and Cluster Management
 
 - When deploying to `prod`, make sure that the exact same migration path has been tested in `test`
-- Always use Helm locally with the `-n` flag specifying the namespace
-- Do not deploy after 16:00, or on a Friday
+- Always use Helm locally with the `-n` flag specifying the namespace. Example: `helm uninstall -n <namespace> ...`
+- Do not deploy to prod after 16:00, or on a Friday
 - Never touch production environments alone. However confident you are in what you are doing, ask for a second pair of eyes
-- Do not delete PVCs with certificates on them
+- Do not delete PVCs with certificates on them without first confirming the certificate keys are recoverable (ie: saved in a password manager)
 
 ## Security
 
@@ -18,6 +18,7 @@
 - DevOps and incident reports are blameless. The aim is to determine what happened, how or why it happened, and what the team can do to help prevent it from happening again in the future
 - Write postmortems after the incident has been resolved, including a write up of the incident itself, how to solve it, and any lessons learned in the process ([google postmortem culture](https://sre.google/sre-book/postmortem-culture/))
 - If incidents of a certain type are recurring, consider writing a runbook for them
+- Ensure affected stakeholders are notified of any disruption and updated when resolved
 
 ## Resources
 
