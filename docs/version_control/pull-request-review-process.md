@@ -19,7 +19,7 @@ Reviewers will assign themselves to the card and review the code by either comme
 
 The Reviewer who starts a review should look at the card description and history of comments to:
 
-- verify acceptance criteria and development checklists are met
+- verify acceptance criteria and development checklists are met (click checkboxes)
 - QA the work
 - ensure no open questions about the work remain
 

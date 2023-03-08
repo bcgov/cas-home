@@ -26,7 +26,7 @@ The choices documented here are defaults, meanining that they may be overriden i
 - Version Control
   - Commit signing
   - Branching and merging model
-  - Peer review process
+  - [Peer review process](./version_control/pull-request-review-process.md)
 
 ### Express + PostGraphile
 
