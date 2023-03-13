@@ -31,6 +31,10 @@ Using 12-hour time with AM/PM specified is recommended when expressing time. If 
 
 Dates expressed in sentences are best expressed with the month and days of the week spelled out (Tuesday, January 17). Be consistent with abbreviations, don't mix abbreviated days of the week with non-abbreviated months (Tues, January 17). If expressing a date numerically, use the format `YYYY-MM-DD`, as per the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) international standard.
 
+### **Timelessness**
+
+Avoid language in your documentation that anchors it to a point in time. Referencing past or future using words like *previous*, *soon* or *new* can quickly become outdated. Referencing *"the previous version"*, for example, immediately becomes outdated as soon as a new version is released. As does *"X is a new feature..."*. Writing documentation with how the code currently works in mind reduces the maintenance required to keep documentation up to date.
+
 ### **Dead Docs**
 
 Take the time to delete dead documentation. Leaving documentation that is no longer relevant in the codebase can cause frustration or can mislead the reader. Here are some good tips on dead doc curation from the [Chromium documentation best practices](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/documentation_best_practices.md):
@@ -43,10 +47,6 @@ Take the time to delete dead documentation. Leaving documentation that is no lon
 ### **Freshness**
 
 Similar to dead docs, stale documentation can be frustrating and misleading. Keep documentation up to date at the same time changes are made to the codebase. Adding documentation as a step in your [definition of done](https://www.wrike.com/project-management-guide/faq/what-is-definition-of-done-agile/) is an effective way to remind yourself and your team to keep on top of this.
-
-### **Timelessness**
-
-Avoid language in your documentation that anchors it to a point in time. Referencing past or future using words like *previous*, *soon* or *new* can quickly become outdated. Referencing *"the previous version"*, for example, immediately becomes outdated as soon as a new version is released. As does *"X is a new feature..."*. Writing documentation with how the code currently works in mind reduces the maintenance required to keep documentation up to date.
 
 ### **Overdocumentation**
 

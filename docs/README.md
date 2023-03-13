@@ -57,6 +57,10 @@ For every request, Our application server uses the `Grant.ensureFreshness` metho
 
 ## Documentation
 
+### Tips for writing effective documentation
+
+[Effective Documentation](./effectiveDocumentation.md)
+
 ### Writing to the database using Relay mutations
 
 ### React JsonSchema Forms
