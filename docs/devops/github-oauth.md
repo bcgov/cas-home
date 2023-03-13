@@ -1,0 +1,6 @@
+# How to implement github OAuth
+
+1. As our bc-cas github user (credentials in 1Password), create an OAuth app in github. This is done from settings -> developer settings.
+2. Once the github OAuth app is set up, log back into your personal github account & attempt to log in to the service you have set up the OAuth app for.
+3. The first time you try to log in with github OAuth, you will see a modal pop up that will ask for your authorization. In this modal, you can also request access to orgs (ie: bcgov) that it will need scoped access to in order to authorize users. After clicking request access, an admin for that github organisation will see the request and approve (or reject) it.
+4. If you miss requesting access to any or all of the necessary github organisations that the OAuth app requires in that authorization pop-up during inital log in. You can go to https://github.com/settings/applications in your personal github account, find the OAuth app, and request access to orgs from there. This flow is also documented here in the (github docs)[https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-membership-in-organizations/requesting-organization-approval-for-oauth-apps]
