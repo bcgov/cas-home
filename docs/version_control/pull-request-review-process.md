@@ -35,7 +35,16 @@ Once you have made changes, the reviewers will review your code again. They can 
 
 ## Step 6: Merge the Pull Request
 
-Once your changes have been approved and the code is updated with the latest changes on the `develop` branch, you can merge the pull request.
+Once your changes have been approved make sure your code is up to date with the latest changes on the `develop` branch; If it's not, you need to rebase your branch with the latest changes on the `develop` branch. We always use `rebase` to keep the history clean and linear. This is what you need to do:
+
+- `git checkout develop`
+- `git pull`
+- `git checkout <your-branch>`
+- `git rebase -i origin/develop` (`-i` is for interactive mode)
+- resolve conflicts if any
+- `git push origin <your-branch> --force`
+
+Once your code is up to date and all checks have passed, you can merge your pull request.
 
 ## Step 7: Move the card to `Pending PO Approval` column
 
@@ -44,10 +53,13 @@ Before doing this, make sure that the code has been deployed to the dev environm
 ## **While waiting for a review / After posting the card for a review**
 
 While you're waiting for a review, you can decide to pull in a new card and start working on that or review other pull requests depending on how many cards you have in progress, how many cards are awaiting review, and how many cards are in the backlog.
-In general, It's a good practice to check if anything needs to be reviewed before pulling a new card into the sprint.
+In general, It's a good practice to check if anything needs to be reviewed before you start working on a new card from the sprint backlog.
+Note that, For taking cards from `Next Sprint Backlog` or `Backlog` you need to have a discussion with the team and get approval from the Product Owner.
 
 ## **Nice to know**
 
 - Posts can disappear from the channel if there are too many posts, It's a good idea to bump your post to keep it visible.
-- If the pull request has a lot of changes, suggesting a walkthrough of the code to the reviewer can be helpful.
+- If the pull request has a lot of changes:
+  - try to limit the amount of changes per PR and split work where possible
+  - suggest a walkthrough of the code to the reviewer
 - Keep the PR reviews channel discussion limited to coordinating logistics of review and merge. Problem-solving belongs in the `Developers` channel.
