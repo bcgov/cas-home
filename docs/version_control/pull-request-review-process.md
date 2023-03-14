@@ -12,6 +12,14 @@ Make a post in the `PR Reviews` Teams channel to let others know that you're rea
 - The link to the pull request
 - Tagging the `PR Reviews` team
 - Any additional context or information that would be helpful for reviewers
+- Example:
+
+```markdown
+@PR Reviews this pull request to fix comments in ciip_fuel view
+PR: link to GH PR
+Card: link to card in project management tool
+Additional context: quick bug fix so that reporter comments on fuels can be seen in metabase
+```
 
 ## Step 3: Reviewers Review the Code
 
