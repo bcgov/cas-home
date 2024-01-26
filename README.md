@@ -6,6 +6,14 @@ Home for the Climate Action Secretariat Digital Services Team
 ## Repositories
 
 ### Active repos
+#### Active development
+ - https://github.com/bcgov/cas-registration: A web app for registration in OBPS under the Clean Growth branch
+ - https://github.com/bcgov/cas-reporting: A web app for reporting industrial emissions under in BC's OBPS under the Clean Growth Branch
+ - https://github.com/bcgov/cas-obps-postgres: A helm chart and shipit target to install a CrunchyDB Postgres Cluster in an OpenShift environment
+ - https://github.com/bcgov/cas-data-warehouse: A data warehouse to ingest several different sources of data within the Clean Growth Branch
+ - https://github.com/bcgov/cas-obps: Exlploratory work and project management data for the OBPS transistion under the Clean Growth Branch
+
+#### Stable
  - https://github.com/bcgov/cas-cif: The CleanBC Industry Fund app
  - https://github.com/bcgov/cas-ciip-portal: The CleanBC Industrial Incentive Program app
  - https://github.com/bcgov/cas-ggircs: The ETL process ingesting data from the Environment and Climate Change Canada Single Window Reporting System
@@ -22,6 +30,7 @@ Home for the Climate Action Secretariat Digital Services Team
  - https://github.com/bcgov/cas-postgres: A helm chart for spilo, Zalando's patroni appliance. This should be replaced by usage of the the Postgres Operator from CrunchyData. 
 
 ### Archived repos
+ - https://github.com/bcgov/cas-public-reporting: A repo used to house GH issues and project management for the public reporting project from 2022
  - https://github.com/bcgov/cas-notebooks: A jupyter notebook to visualized docker layers disk usage on OCP 3.11
  - https://github.com/bcgov/cas-ggircs-ciip-2018-schema: Data schema for the CleanBC Industrial Incentives Program - 2018 data 
  - https://github.com/bcgov/cas-ggircs-metabase: Installation instructions for a local installation of metabase
@@ -31,7 +40,8 @@ Home for the Climate Action Secretariat Digital Services Team
  - https://github.com/bcgov/cas-ggircs-metabase-build: Build configs for assembling a metabase image using s21 (source-to-image). Consumes the output of cas-ggircs-metabase-builder.
  - https://github.com/bcgov/cas-ggircs-metabase-builder: Build configs for building a metabase image including dependencies. Feeds cas-ggircs-metabase-build.
  - https://github.com/bcgov/spilo-chart: A short-lived attempt to make a reusable chart for Spilo. The CrunchyDB Postgres Operator became available shortly after
-
+ - https://github.com/bcgov/cas-hackathon-reg: A spike project to investigate feasibility of a registration app under the Clean Growth Branch
+ - https://github.com/bcgov/cas-hackathon-devops: A spike project to investigate devops aspects, including CI and code quality.
 
 ## Team Agreements
 
