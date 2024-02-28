@@ -30,6 +30,9 @@ developers to be mindful of which branch they are on when pushing code.
   Drawbacks are that we lose the 'single history' when we have the confidence that both apps can share 
   the release process.
 
+## Testing considerations
+- After rebase (or merge) from the official `develop` branch, manual regression testing might be useful, in particular when common files have been modified.
+
 ## CI/CD considerations
 - Shipit will deploy `giraffe-develop` in a separate namespace to avoid interactions
 - Helm values will need to be adjusted for that
