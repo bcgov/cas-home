@@ -23,10 +23,21 @@ The choices documented here are defaults, meanining that they may be overriden i
   - GitHub actions
   - Helm
   - Continuous deployment
+  - ShipIt
 - Version Control
   - Commit signing
   - Branching and merging model
   - [Peer review process](./version_control/pull-request-review-process.md)
+
+## Decisions and Documentation
+
+Most research spikes and decisions for software and tooling are held either here or in the CAS SharePoint. 
+
+- ArgoCD was briefly trialed, but the decision was made to stay with ShipIt. [A comparison was documented here](https://bcgov.sharepoint.com/:w:/r/teams/00608-ScrumTeam/Shared%20Documents/Scrum%20Team/OBPS/Tech%20Stack%20Decisions/argo-shipit-comparison.docx?d=w9622a52177b340208cd1df8f02fb0ae8&csf=1&web=1&e=rNNUP9). This may be reconsidered in the future.
+- BCIERS can be found [in this SharePoint folder](https://bcgov.sharepoint.com/:f:/r/teams/00608-ScrumTeam/Shared%20Documents/Scrum%20Team/OBPS/Tech%20Stack%20Decisions?csf=1&web=1&e=W7964b).
+- BCIERS API documentation can be found in [this sharepoint document](https://bcgov.sharepoint.com/:w:/r/teams/00608-ScrumTeam/Shared%20Documents/Scrum%20Team/BCIERS%20API%20Design%20Doc%201.docx?d=w7a463c8aeeb546af9856e23fc2b4a40e&csf=1&web=1&e=XfjJ6U).
+- Graphite was explored as a commit stacking & PR acceleration tool, but was determined to be costly. [Research given here](https://bcgov.sharepoint.com/:w:/r/teams/00608-ScrumTeam/Shared%20Documents/Scrum%20Team/OBPS/Tech%20Stack%20Decisions/Graphite%20%26%20Git%20Commit%20Stacking.docx?d=w863c7c75905a43f8908e0d4a6a53af30&csf=1&web=1&e=UTXEzG).
+  - Git Commit Stacking, however, was deemed a potential boon. More research/training development is needed to find an alternate to Graphite. [Update refs](https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---update-refs) is one such posibility.
 
 ### Express + PostGraphile
 
@@ -54,6 +65,10 @@ Keycloak session timeouts are dictated by the `SSO Session Idle`, `SSO Session M
 Our application client uses the `/session-idle-remaining-time` endpoint to check whether the session has automatically expired due to inactivity, and redirects the user to a login page, indicating that their session expired. Without that feature, the user would encounter an error on their next interaction with the page, as they would potentially trigger a request that requires them to be authenticated.
 
 For every request, Our application server uses the `Grant.ensureFreshness` method to extend the session and ensures it does not idle. That method will only use the refresh token (and thus bump the `SSO Session Idle` timeout) if the access token is expired, which means that our idle timeout is technically `(SSO Session Idle) - (Access Token Lifespan)`.
+
+### Monorepos
+
+In the BCIERS project [cas-registration](https://github.com/bcgov/cas-registration), the decision was made to implement a Monorepo. Nx was decided on, with further consideration given to other features in it detailed in [this document on sharepoint](https://bcgov.sharepoint.com/:w:/r/teams/00608-ScrumTeam/Shared%20Documents/Scrum%20Team/OBPS/Tech%20Stack%20Decisions/Nx%20Monorepo%20further%20feature%20research.docx?d=w1e41e1927ce84495950e8bc27bd68389&csf=1&web=1&e=7MUqSM). Turborepo was also considered, but Nx was chosen.
 
 ## Documentation
 
