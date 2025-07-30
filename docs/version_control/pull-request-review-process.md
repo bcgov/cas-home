@@ -21,7 +21,24 @@ After you push your commits, create a pull request and name it `<conventional-co
 
 It's a good idea to push early and often (can use draft PRs) so that you can get feedback on your changes before you're ready ask for a review. It's also a good idea to rebase often to keep the PR up-to-date with `develop`. (See below for more information on rebasing.)
 
-### Step 3: Post in the PR Reviews Teams Channel
+### Step 3: Check that your Pull Request is ready for review
+
+Before requesting a review of your PR from your team members, you should use this checklist to confirm that your PR is ready. This ensures that the review process is as streamlined as possible - a well-done PR review is time-consuming, so you can help your team members out by checking that you've completed everything that's expected in the PR.
+
+- review the Acceptance Criteria in the ticket and make sure that all items are fulfilled
+- run your code locally and make sure that there are no frontend regressions
+- make sure that all steps of our Continuous Integration (CI) pipeline have passed
+- mark the ticket as "Pending Review" on the sprint board
+- make sure your branch is up-to-date with the `develop` branch (rebase if necessary)
+- mark the PR as "Ready for Review" in Github
+
+Optional (but recommended) steps:
+
+- review your own PR changes in GitHub (using the diff view), in particular checking for residual comments you may have added with notes to yourself, commented-out code that's no longer needed, etc.
+- if necessary, add comments for the reviewer in the GitHub diff view explaining your chosen approach
+- update the ticket to add notes with your recommendations for how to manually test your PR. This is helpful for the reviewer, QA, and the PO!
+
+### Step 4: Post in the PR Reviews Teams Channel
 
 Make a post in the `PR Reviews` Teams channel to let others know that you're ready for a review. It's highly recommended to include the following information:
 
@@ -45,7 +62,7 @@ Reviewers: `@Developer_A` `@Developer_B`
 Additional context: quick bug fix so that reporter comments on fuels can be seen in metabase
 ```
 
-### Step 4: Update the Board
+### Step 5: Update the Board
 
 Move your card to `Pending Dev Review` column.
 
