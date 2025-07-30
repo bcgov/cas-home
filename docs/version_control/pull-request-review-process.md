@@ -36,7 +36,7 @@ Optional (but recommended) steps:
 
 - review your own PR changes in GitHub (using the diff view), in particular checking for residual comments you may have added with notes to yourself, commented-out code that's no longer needed, etc.
 - if necessary, add comments for the reviewer in the GitHub diff view explaining your chosen approach
-- in your PR notes, explain how you'd recommend manually testing your PR. This is helpful for the reviewer, QA, and the PO!
+- update the ticket to add notes with your recommendations for how to manually test your PR. This is helpful for the reviewer, QA, and the PO!
 
 ### Step 4: Post in the PR Reviews Teams Channel
 
